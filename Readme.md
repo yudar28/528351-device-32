@@ -1,7 +1,7 @@
 # Личный проект «Девайс»
 
 * Студент: [Дарья Юдина](https://up.htmlacademy.ru/htmlcss/32/user/528351).
-* Наставник: `Неизвестно`.
+* Наставник: [Александр Григорьев](https://htmlacademy.ru/profile/fuckhtml).
 
 ---
 
