@@ -27,8 +27,8 @@ module.exports = {
     'font-family-no-missing-generic-family-keyword' : true,
     'no-descending-specificity' : null,
 
-    'color-hex-case': 'lower',
-    'color-hex-length': 'long',
+    'control-hex-case': 'lower',
+    'control-hex-length': 'long',
 
     'font-family-name-quotes': 'always-unless-keyword',
 
@@ -157,9 +157,9 @@ module.exports = {
     'no-duplicate-at-import-rules' : true,
     'no-invalid-position-at-import-rule': true,
 
-    'color-no-invalid-hex' : true,
-    'color-no-hex' : null,
-    'color-named' : 'never',
+    'control-no-invalid-hex' : true,
+    'control-no-hex' : null,
+    'control-named' : 'never',
     'number-max-precision' : 2
   }
 }
