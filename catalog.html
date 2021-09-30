@@ -10,7 +10,8 @@
         <img class="logo-img" src="" alt="Логотип Device">
       </a>
       <form action="#" method="GET">
-        <input type="search" placeholder="Поиск по сайту">
+        <label class="visually-hidden" for="search">Поиск по сайту</label>
+        <input type="search" id="search" name="search" placeholder="Поиск по сайту">
       </form>
       <nav class="navigation">
         <ul class="navigation-user-list">
@@ -68,7 +69,7 @@
           </li>
         </ul>
       </header>
-      <section class="catalog-monopods">
+      <section class="filter">
         <h2 class="visually-hidden">Список моноподов с фильтрами</h2>
         <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="get">
           <fieldset class="catalog-filter-group">
@@ -150,56 +151,62 @@
 
           <button class="catalog-filter yellow-link" type="submit">Показать</button>
         </form>
+      </section>
 
-        <div class="sorting-wrap">
-          <form class="sorting-type">
-            <label class="sorting-label" for="sorting">Сортировка</label>
-            <select class="select-control" id="sorting" name="sorting">
-              <option value="popular">Сначала популярное</option>
-              <option value="cheap">Сначала дешёвое</option>
-              <option value="expensive">Сначала дорогое</option>
-            </select>
-            <button class="visually-hidden" type="submit">Отсортировать продукты</button>
-          </form>
-          <a class="btn btn-disable">
-            <span class="visually-hidden">Показать предыдущие товары</span>
-          </a>
-          <a class="btn btn-disable">
-            <span class="visually-hidden">Показать следующие товары</span>
-          </a>
-        </div>
-        <ul class="product-list">
-          <li class="product-card">
+      <section class="sorting">
+        <form class="sorting-type" method="GET">
+          <label class="sorting-label" for="sorting">Сортировка</label>
+          <select class="select-control" id="sorting" name="sorting">
+            <option value="popular">Сначала популярное</option>
+          </select>
+          <label class="sorting-price-label">
+            <input class="sorting-price" type="radio" name="sorting-price" value="increase">
+            <span class="sorting-price-mark"></span>
+            <span class="visually-hidden">Отсортировать по возрастанию</span>
+          </label>
+          <label class="sorting-price-label">
+            <input class="sorting-price" type="radio" name="sorting-price" value="decrease">
+            <span class="sorting-price-mark"></span>
+            <span class="visually-hidden">Отсортировать по убыванию</span>
+          </label>
+          <button class="visually-hidden" type="submit">Отсортировать продукты</button>
+        </form>
+      </section>
+
+      <section class="catalog-monopods">
+        <div class="product-list">
+          <article class="product-card">
             <a class="product-link" href="#">
               <img src="" alt="Любительская селфи-палка">
               <h3 class="product-title">Любительская селфи-палка</h3>
               <b class="product-price">500 ₽</b>
               <span class="visually-hidden">Подробнее</span>
             </a>
-          </li>
-          <li class="product-card">
+          </article>
+          <article class="product-card">
             <a class="product-link" href="#">
               <img src="" alt="Профессиональная селфи-палка ">
               <h3 class="product-title">Профессиональная селфи-палка </h3>
               <b class="product-price">1 500 ₽</b>
             </a>
-          </li>
-          <li class="product-card">
+          </article>
+          <article class="product-card">
             <a class="product-link" href="#">
               <img src="" alt="Непотопляемая селфи-палка">
               <h3 class="product-title">Непотопляемая селфи-палка</h3>
               <b class="product-price">2 500 ₽</b>
             </a>
-          </li>
-          <li class="product-card">
+          </article>
+          <article class="product-card">
             <a class="product-link" href="#">
               <img src="" alt="Селфи-палка «Следуй за мной»">
               <span class="visually-hidden">Новый товар</span>
               <h3 class="product-title">Селфи-палка «Следуй за мной»</h3>
               <b class="product-price">4 900 ₽</b>
             </a>
-          </li>
-        </ul>
+          </article>
+        </div>
+
         <button class="pagination-show-more" type="button">Загрузить еще</button>
         <ul class="pagination">
           <li class="pagination-item">
