@@ -3,15 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Девайс</title>
+    <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
     <header class="page-header">
-      <a class="logo-link" href="#">
+      <a class="logo-link" href="index.html">
         <img class="logo-img" src="img/logo-device.svg" width="145" height="36" alt="Логотип Device">
       </a>
       <form action="#" method="GET">
         <label class="visually-hidden" for="search">Поиск по сайту</label>
-        <input type="search" id="search" name="search" placeholder="Поиск по сайту">
+        <input class="search-form-input" type="search" id="search" name="search" placeholder="Поиск по сайту">
+        <button class="visually-hidden search-form-btn" type="submit">Найти</button>
       </form>
       <nav class="navigation">
         <ul class="navigation-user-list">
@@ -71,7 +73,8 @@
       </header>
       <section class="filter">
         <h2 class="visually-hidden">Список моноподов с фильтрами</h2>
-        <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="get">
+        <form class="catalog-filter-form" action="https://echo.htmlacademy.ru/" method="get">
+          <h3 class="catalog-filter-name filter-name">Фильтр:</h3>
           <fieldset class="catalog-filter-group">
             <legend class="catalog-filter-title">Стоимость</legend>
             <button class="range-toggle toggle-min" type="button">
@@ -155,7 +158,7 @@
 
       <section class="sorting">
         <form class="sorting-type" method="GET">
-          <label class="sorting-label" for="sorting">Сортировка</label>
+          <label class="sorting-label filter-name" for="sorting">Сортировка:</label>
           <select class="select-control" id="sorting" name="sorting">
             <option value="popular">Сначала популярное</option>
           </select>
@@ -180,7 +183,7 @@
               <img src="img/products/product-1.jpg" width="360" height="380" alt="Любительская селфи-палка">
               <h3 class="product-title">Любительская селфи-палка</h3>
               <b class="product-price">500 ₽</b>
-              <span class="visually-hidden">Подробнее</span>
+              <span class="visually-hidden btn-yellow">Подробнее</span>
             </a>
           </article>
           <article class="product-card">
