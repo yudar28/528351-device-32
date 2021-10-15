@@ -6,13 +6,13 @@
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
-    <header class="page-header">
-      <a class="logo-link" href="index.html">
+    <header class="page-header header-inner">
+      <a class="logo-link logo-header" href="index.html">
         <img class="logo-img" src="img/logo-device.svg" width="145" height="36" alt="Логотип Device">
       </a>
       <div class="page-header-container">
-        <form action="#" method="GET">
-          <label class="visually-hidden" for="search">Поиск по сайту</label>
+        <form class="search-form" action="#" method="GET">
+          <p class="visually-hidden" for="search">Поиск по сайту</p>
           <input class="search-form-input" type="search" id="search" name="search" placeholder="Поиск по сайту">
           <button class="visually-hidden search-form-btn" type="submit">Найти</button>
         </form>
@@ -59,7 +59,7 @@
 
     <main class="main-container main-inner">
       <header class="inner-header">
-        <h1 class="visually-hidden" hidden>Каталог товаров</h1>
+        <h1 class="visually-hidden">Каталог товаров</h1>
         <h2 class="main-inner-subtitle">Моноподы для селфи</h2>
         <ul class="breadcrumbs">
           <li class="breadcrumbs-item">
@@ -75,8 +75,8 @@
       </header>
       <div class="inner-container">
         <section class="filter">
-          <h2 class="visually-hidden" hidden>Список моноподов с фильтрами</h2>
-          <h3 class="catalog-filter-name filter-name">Фильтр:</h3>
+          <h2 class="visually-hidden">Список моноподов с фильтрами</h2>
+          <h3 class="catalog-filter-name">Фильтр:</h3>
           <form class="catalog-filter-form" action="https://echo.htmlacademy.ru/" method="get">
             <fieldset class="catalog-filter-group">
               <legend class="catalog-filter-title">Стоимость</legend>
@@ -162,20 +162,22 @@
         <div class="sorting-product-container">
           <section class="sorting">
             <form class="sorting-type" method="GET">
-              <label class="sorting-label filter-name" for="sorting">Сортировка:</label>
+              <label class="sorting-label" for="sorting">Сортировка:</label>
               <select class="select-control" id="sorting" name="sorting">
                 <option value="popular">Сначала популярное</option>
               </select>
-              <label class="sorting-price-label">
-                <input class="sorting-price" type="radio" name="sorting-price" value="increase">
-                <span class="sorting-price-mark"></span>
-                <span class="visually-hidden">Отсортировать по возрастанию</span>
-              </label>
-              <label class="sorting-price-label">
-                <input class="sorting-price" type="radio" name="sorting-price" value="decrease">
-                <span class="sorting-price-mark"></span>
-                <span class="visually-hidden">Отсортировать по убыванию</span>
-              </label>
+              <div class="sorting-price-label-container">
+                <label class="sorting-price-label">
+                  <input class="sorting-price" type="radio" name="sorting-price" value="increase">
+                  <span class="sorting-price-mark"></span>
+                  <span class="visually-hidden">Отсортировать по возрастанию</span>
+                </label>
+                <label class="sorting-price-label">
+                  <input class="sorting-price" type="radio" name="sorting-price" value="decrease">
+                  <span class="sorting-price-mark"></span>
+                  <span class="visually-hidden">Отсортировать по убыванию</span>
+                </label>
+              </div>
               <button class="visually-hidden" type="submit">Отсортировать продукты</button>
             </form>
           </section>
@@ -217,7 +219,7 @@
             <button class="pagination-show-more" type="button">Загрузить еще</button>
             <ul class="pagination">
               <li class="pagination-item">
-                <a class="pagination-link pagination-prev pagination-disabled">Назад</a>
+                <a class="pagination-link pagination-move pagination-prev pagination-disabled">Назад</a>
               </li>
               <li class="pagination-item">
                 <a class="pagination-link" href="#">1</a>
@@ -237,7 +239,7 @@
                 <a class="pagination-link" href="#">15</a>
               </li>
               <li class="pagination-item">
-                <a class="pagination-link pagination-next">Вперёд</a>
+                <a class="pagination-link pagination-move pagination-next">Вперёд</a>
               </li>
             </ul>
           </section>
@@ -247,13 +249,13 @@
 
     <footer class="page-footer">
       <div class="page-footer-container">
-        <a class="logo-link" href="#">
+        <a class="logo-link logo-footer" href="#">
           <img class="logo-img" src="img/device-yellow.svg" width="145" height="36" alt="Логотип Device">
         </a>
         <address class="page-footer-address">
           <p class="page-footer-address-text">Санкт-Петербург, набережная реки Карповки, 5, литера П.</p>
-          <a class="page-footer-phone" href="tel:88128121212">+7 (812) 812-12-12</a>
         </address>
+        <a class="page-footer-phone" href="tel:88128121212">+7 (812) 812-12-12</a>
         <ul class="page-footer-list">
           <li class="page-footer-item">
             <a class="page-footer-link" href="#">Доставка</a>
