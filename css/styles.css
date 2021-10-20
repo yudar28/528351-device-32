@@ -923,12 +923,35 @@ body {
   background: #DCDCDC;
 }
 
+.catalog-filter-form {
+  margin-top: 71px;
+}
+
 .catalog-filter-group {
+  position: relative;
+
+  margin: 0 0 36px 60px;
+  padding: 0;
+  width: 200px;
+
   border: none;
-  border-top: 2px solid #000000;
+}
+
+.catalog-filter-group::before {
+  position: absolute;
+  top: -32px;
+
+  width: 200px;
+  height: 2px;
+
+  content: "";
+
+  background-color: #000000;
 }
 
 .catalog-filter-title {
+  padding-top: 12px;
+
   font-weight: 700;
   font-size: 18px;
   line-height: 20px;
@@ -940,11 +963,30 @@ body {
   line-height: 19px;
 }
 
-.catalog-filter {
+.catalog-filter-btn {
+  margin-left: 60px;
+  padding: 0 40px;
+
   background-color: inherit;
   background: linear-gradient(to bottom, #E5E5E5 35%, #FFC700 35%, #FFC700 70%, #E5E5E5 70%);
 
   border: none;
+}
+
+.catalog-filter-list {
+  margin: 0;
+  margin-top: 20px;
+  padding: 0;
+
+  list-style-type: none;
+}
+
+.catalog-filter-item {
+  padding-left: 37px;
+}
+
+.catalog-filter-item:not(:last-child) {
+  padding-bottom: 20px;
 }
 
 .sorting-product-container {
@@ -1006,24 +1048,53 @@ body {
   border: none;
 }
 
+.product-list {
+  margin: 69px 0 40px 72px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 360px);
+  gap: 40px;
+}
+
+.product-card {
+  padding-bottom: 4px;
+}
+
 .product-link {
+  display: grid;
+  grid-template-columns: 280px auto;
+  row-gap: 32px;
+
   color: inherit;
   text-decoration: none;
 }
 
+.product-img {
+  grid-column: 1 / -1;
+}
+
 .product-title {
+  margin: 0;
+  padding-right: 10px;
+
+  font-size: 18px;
+  line-height: 24px;
   font-weight: 700;
   letter-spacing: -0.5px;
 }
 
 .product-price {
+  justify-self: end;
+
+  font-size: 18px;
   color: #444444;
   font-weight: 400;
   line-height: 21px;
 }
 
 .pagination-show-more {
-  margin: 0 auto 51px;
+  margin-bottom: 51px;
+  margin-left: auto;
 
   width: 760px;
   padding: 18px;
@@ -1042,7 +1113,8 @@ body {
 }
 
 .pagination {
-  margin: 0 auto 77px;
+  margin-bottom: 77px;
+  margin-left: auto;
 
   width: 760px;
   padding: 27px 30px 24px;
