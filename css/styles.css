@@ -999,18 +999,7 @@ body {
   padding-right: 0;
 
   background-color: #EBEBEB;
-}
-
-.sorting::before {
-  position: absolute;
-  top: 0;
-  right: -1000px;
-
-  content: "";
-  width: 1000px;
-  height: 100%;
-
-  background: #EBEBEB;
+  box-shadow: 35vw 0 0 #EBEBEB;
 }
 
 .sorting-type {
