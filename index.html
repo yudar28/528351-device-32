@@ -12,10 +12,10 @@
         <img class="logo-img" src="img/logo-device.svg" width="145" height="36" alt="Логотип Device">
       </a>
       <div class="page-header-container">
-        <form class="search-form" action="#" method="GET">
+        <form class="search-form" action="https://echo.htmlacademy.ru/" method="GET">
           <label class="visually-hidden" for="search">Поиск по сайту</label>
-          <input class="search-form-input" type="search" id="search" name="search" placeholder="Поиск по сайту">
-          <button class="visually-hidden search-form-btn" type="submit">Найти</button>
+          <input class="search-form-input" type="search" id="search" name="search" placeholder="Поиск по сайту" required> <!-- search-form-input-active -->
+          <button class="search-form-btn" type="submit">Найти</button>
         </form>
         <ul class="navigation-user-list">
           <li class="navigation-user-item">
@@ -36,14 +36,62 @@
             <a class="navigation-user-link navigation-user-basket" href="#"><span class="navigation-user-quantity">2</span> Корзина</a>
           </li>
         </ul>
+        <div class="popup-basket popup-basket--none"> <!-- popup-basket--none -->
+          <h2 class="visually-hidden">Выбранные товары в корзине</h2>
+          <ul class="popup-basket-list">
+            <li class="popup-basket-item">
+              <a class="popup-basket-link">
+                <img class="popup-basket-img" src="img/product-1-small.png" width="41" height="43" alt="Любительская селфи-палка">
+                <h3 class="popup-basket-title">Любительская селфи-палка</h3>
+              </a>
+              <button class="popup-basket-btn-delete">
+                <span class="visually-hidden">Удалить товар</span>
+              </button>
+            </li>
+            <li class="popup-basket-item">
+              <a class="popup-basket-link">
+                <img class="popup-basket-img" src="img/product-2-small.png" width="41" height="43" alt="Профессиональная селфи-палка">
+                <h3 class="popup-basket-title">Профессиональная селфи-палка</h3>
+              </a>
+              <button class="popup-basket-btn-delete">
+                <span class="visually-hidden">Удалить товар</span>
+              </button>
+            </li>
+          </ul>
+          <div class="popup-basket-amount">
+            <p class="popup-basket-quantity">Товаров: <b>2</b></p>
+            <p class="popup-basket-sum">Сумма: <b>2000</b> ₽</p>
+          </div>
+          <a class="popup-basket-open" href="#">Открыть корзину</a>
+        </div>
       </div>
       <nav class="navigation">
         <ul class="navigation-list">
           <li class="navigation-item navigation-item-catalog">
             <a class="navigation-link" href="catalog.html">Каталог товаров</a>
-            <button class="navigation-btn" type="button">
+            <button class="navigation-btn-open" type="button">  <!-- navigation-btn-close  -->
               <span class="visually-hidden">Открыть меню каталога товаров</span>
             </button>
+            <ul class="catalog-list catalog-list-display">
+              <li class="catalog-item">
+                <a class="catalog-item-link" href="#">Виртуальная реальность</a>
+              </li>
+              <li class="catalog-item">
+                <a class="catalog-item-link" href="#">Фитнес-браслеты</a>
+              </li>
+              <li class="catalog-item">
+                <a class="catalog-item-link" href="#">Квадрокоптеры</a>
+              </li>
+              <li class="catalog-item">
+                <a class="catalog-item-link" href="catalog.html">Моноподы для cелфи</a>
+              </li>
+              <li class="catalog-item">
+                <a class="catalog-item-link" href="#">Умные часы</a>
+              </li>
+              <li class="catalog-item">
+                <a class="catalog-item-link" href="#">Экшн-камеры</a>
+              </li>
+            </ul>
           </li>
           <li class="navigation-item">
             <a class="navigation-link" href="#">Доставка</a>
@@ -56,26 +104,6 @@
           </li>
         </ul>
       </nav>
-      <ul class="catalog-list catalog-list--none">
-        <li class="catalog-item">
-          <a class="catalog-item-link" href="#">Виртуальная реальность</a>
-        </li>
-        <li class="catalog-item">
-          <a class="catalog-item-link" href="#">Фитнес-браслеты</a>
-        </li>
-        <li class="catalog-item">
-          <a class="catalog-item-link" href="#">Квадрокоптеры</a>
-        </li>
-        <li class="catalog-item">
-          <a class="catalog-item-link" href="catalog.html">Моноподы для cелфи</a>
-        </li>
-        <li class="catalog-item">
-          <a class="catalog-item-link" href="#">Умные часы</a>
-        </li>
-        <li class="catalog-item">
-          <a class="catalog-item-link" href="#">Экшн-камеры</a>
-        </li>
-      </ul>
     </header>
 
     <main class="main-container main-index">
@@ -316,7 +344,7 @@
           <div class="subscribe-form">
             <form action="https://echo.htmlacademy.ru/" method="POST">
               <label class="visually-hidden" for="subscribe-email">Оставьте здесь ваш e-mail</label>
-              <input class="subscribe-input" type="email" id="subscribe-email" name="subscribe-email" placeholder="Ваш e-mail">
+              <input class="subscribe-input" type="email" id="subscribe-email" name="subscribe-email" placeholder="Ваш e-mail" required> <!-- subscribe-input-active subscribe-input-error -->
               <button class="subscribe-btn" type="submit">Подписаться</button>
             </form>
           </div>
