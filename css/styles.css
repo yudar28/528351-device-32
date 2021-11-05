@@ -1897,12 +1897,99 @@ body {
   list-style-type: none;
 }
 
-.catalog-filter-item {
-  padding-left: 37px;
-}
-
 .catalog-filter-item:not(:last-child) {
   padding-bottom: 20px;
+}
+
+.control {
+  position: relative;
+  display: block;
+  padding-left: 37px;
+  cursor: pointer;
+}
+
+.control-mark {
+  position: absolute;
+  top: 3px;
+  left: 0;
+
+  width: 20px;
+  height: 20px;
+
+  box-sizing: border-box;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.control-input[type="checkbox"]:checked + .control-mark {
+  border-color: #000000;
+}
+
+.control-input[type="checkbox"]:checked + .control-mark::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: url("../img/check-mark-black.svg") no-repeat center;
+}
+
+.control-input:focus ~ .control-mark{
+  border-color: #AF4FFF;
+}
+
+.control-input:focus ~ .control-label {
+  color: #AF4FFF;
+}
+
+.control-input:checked:focus ~ .control-mark{
+  border-color: #AF4FFF;
+}
+
+.control-input[type="checkbox"]:checked:focus ~ .control-mark::before {
+  background-image: url("../img/check-mark-purple.svg");
+}
+
+.control-input:checked:hover ~ .control-mark,
+.control-input:checked:hover ~ .control-label {
+  opacity: 0.5;
+}
+
+.control-input:active ~ .control-mark,
+.control-input:active ~ .control-label {
+  opacity: 0.2;
+}
+
+.control-input[type="radio"] + .control-mark {
+  border-radius: 50%;
+}
+
+.control-input[type="radio"]:checked + .control-mark {
+  border-color: #000000;
+}
+
+.control-input[type="radio"]:checked + .control-mark::before {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+
+  width: 8px;
+  height: 8px;
+  content: "";
+
+  background-color: #000000;
+  border-radius: 50%;
+}
+
+.control-input[type="radio"]:checked:focus ~ .control-mark {
+  border-color: #AF4FFF;
+}
+
+.control-input[type="radio"]:checked:focus ~ .control-mark::before {
+  background-color: #AF4FFF;
 }
 
 .sorting-product-container {
@@ -1940,8 +2027,46 @@ body {
   margin-left: auto;
 }
 
+.sorting-price-label {
+  position: relative;
+  display: block;
+}
+
+.sorting-price-mark {
+  position: absolute;
+  top: -15px;
+
+  width: 30px;
+  height: 30px;
+
+  background: url("../img/sorting-price.svg") no-repeat center;
+  opacity: 0.1;
+}
+
+.sorting-price-mark-increase {
+  right: 20px;
+}
+
+.sorting-price-mark-decrease {
+  transform: rotate(180deg);
+  right: -6px;
+}
+
+.sorting-price:checked ~ .sorting-price-mark {
+  opacity: 1;
+}
+
+.sorting-price:focus ~ .sorting-price-mark {
+  outline: 5px solid #AF4FFF;;
+}
+
+.sorting-price-mark:hover {
+  opacity: 0.3;
+}
+
 .select-control {
-  margin-left: 52px;
+  margin-left: 37px;
+  padding: 4px 15px 5px;
 
   font-family: "Rubik", sans-serif;
   font-weight: 400;
@@ -1951,6 +2076,19 @@ body {
   background-color: #EBEBEB;
 
   border: none;
+}
+
+.select-control:focus {
+  outline: 5px solid #AF4FFF;
+}
+
+.select-control:hover {
+  opacity: 0.6;
+}
+
+.select-control:active {
+  opacity: 0.3;
+  outline: none;
 }
 
 .product-list {
