@@ -36,7 +36,7 @@
             <a class="navigation-user-link navigation-user-basket" href="#"><span class="navigation-user-quantity">2</span> Корзина</a>
           </li>
         </ul>
-        <div class="popup-basket popup-basket--none"> <!-- popup-basket--none -->
+        <div class="popup-basket"> <!-- popup-basket--open -->
           <h2 class="visually-hidden">Выбранные товары в корзине</h2>
           <ul class="popup-basket-list">
             <li class="popup-basket-item">
@@ -403,5 +403,56 @@
       </div>
     </footer>
 
+    <div class="modal-container"> <!-- modal-container-close -->
+      <div class="modal modal-delivery">
+        <div class="modal-delivery-wrap">
+          <h2 class="modal-delivery-title">Доставка под заказ</h2>
+          <button class="modal-delivery-btn">
+            <span class="visually-hidden">Закрыть</span>
+          </button>
+        </div>
+        <form class="modal-delivery-form">
+          <div class="field-group modal-delivery-form-name">
+            <label class="form-label" for="form-name">Ваше имя:</label>
+            <input class="field" type="text" id="form-name" name="form-name" placeholder="Имя Фамилия" required> <!--field-active-->
+            <p class="form-comment">Пожалуйста, представьтесь</p>
+          </div>
+          <div class="field-group modal-delivery-form-email">
+            <label class="form-label" for="form-email">Ваш e-mail:</label>
+            <input class="field" type="email" id="form-email" name="form-email" placeholder="krasotka92@mail.ru" value="krasotka92@mail.ru" required> <!--field-active-->
+            <p class="form-comment">Забавный у вас адрес</p>
+          </div>
+          <div class="field-group modal-delivery-form-order">
+            <label class="form-label" for="form-order">Что нужно привезти:</label>
+            <input class="field" type="text" id="form-order" name="form-order" placeholder="В свободной форме"> <!--field-active-->
+          </div>
+          <div class="field-group modal-delivery-form-quantity">
+            <label class="form-label" for="form-quantity">Количество:</label>
+            <div class="quantity-input"> <!-- quantity-input-active -->
+              <button class="quantity-input-btn quantity-input-btn-minus">
+                <span class="visually-hidden">Уменьшить количество</span>
+                <svg width="16" height="2" viewBox="0 0 16 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16 0H0V2H16V0Z" fill="black"/>
+                </svg>
+              </button>
+              <input class="field field-quantity" type="number" min="1" step="1" id="form-quantity" name="form-quantity" value="1">
+              <button class="quantity-input-btn quantity-input-btn-plus">
+                <span class="visually-hidden">Увеличить количество</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16 7H9V0H7V7H0V9H7V16H9V9H16V7Z" fill="black"/>
+                </svg>
+              </button>
+            </div>
+            <button class="form-quantity-info">
+              <span class="visually-hidden">Дополнительная информация</span>
+            </button>
+            <div class="form-quantity-info-text">
+              <p>Постараемся найти, сколько нужно. Привезём сколько получится по требованиям к провозу багажа.</p>
+            </div>
+          </div>
+          <button class="modal-form-submit btn-yellow">Отправить</button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>

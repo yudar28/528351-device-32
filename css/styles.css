@@ -69,6 +69,7 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   color: #000000;
+  border: none;
 
   background: linear-gradient(to bottom, white 40%, #FFE17F 40%, #FFE17F 55%, white 55%);
 }
@@ -315,15 +316,17 @@ body {
   border-radius: 50%;
 }
 
-/* Модальное окно */
+/* Popup */
 
 .popup-basket {
   position: absolute;
   top: 30px;
-  right: -72px;
+  right: -56px;
   z-index: 3;
 
   width: 320px;
+  min-height: 135px;
+  display: none;
 
   font-family: "Rubik", sans-serif;
   font-size: 16px;
@@ -348,8 +351,8 @@ body {
   background: url("../img/triangle.svg") no-repeat;
 }
 
-.popup-basket--none {
-  display: none;
+.popup-basket--open {
+  display: block;
 }
 
 .popup-basket-list {
@@ -485,7 +488,7 @@ body {
   color: rgba(0, 0, 0, 0.3);
 }
 
-/* Окончание разметки модального окна */
+/* Окончание разметки popup */
 
 .navigation-list {
   margin: 0 auto 167px;
@@ -550,6 +553,10 @@ body {
 
 .navigation-item-catalog:hover {
   cursor: pointer;
+}
+
+.navigation-item-catalog:hover .catalog-list-display {
+  display: grid;
 }
 
 .navigation-item-catalog:active {
@@ -2296,4 +2303,329 @@ body {
 .pagination-link:active {
   outline: none;
   opacity: 0.1;
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.modal-container-close {
+  display: none;
+}
+
+.modal {
+  position: relative;
+
+  margin: auto;
+  padding: 80px;
+
+  background-color: #FFFFFF;
+  border: 10px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.modal-delivery {
+  width: 920px;
+}
+
+.modal-delivery-wrap {
+  margin-bottom: 58px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-delivery-title {
+  margin: 0;
+  padding: 0;
+
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  color: #000000;
+  font-size: 50px;
+  line-height: 50px;
+}
+
+.modal-delivery-form {
+  display: grid;
+  grid-template-columns: 360px 160px 160px;
+  column-gap: 40px;
+}
+
+.modal-delivery-form-name {
+  position: relative;
+}
+
+.modal-delivery-form-name::after {
+  position: absolute;
+  top: 66px;
+  right: 24px;
+
+  content: "";
+  width: 13px;
+  height: 12px;
+
+  background: url("../img/person.svg") no-repeat;
+}
+
+.modal-delivery-form-email {
+  position: relative;
+  grid-column: 2/-1;
+}
+
+.modal-delivery-form-email::after {
+  position: absolute;
+  top: 66px;
+  right: 24px;
+
+  content: "";
+  width: 15px;
+  height: 12px;
+
+  background: url("../img/email.svg") no-repeat;
+}
+
+.modal-delivery-form-order {
+  grid-column: 1/3;
+}
+
+.modal-delivery-btn {
+  position: relative;
+
+  margin: 0;
+  margin-right: -12px;
+  padding: 0;
+
+  width: 50px;
+  height: 50px;
+
+  box-sizing: border-box;
+  border: none;
+  background: #FFFFFF url("../img/cross-black.svg") no-repeat center;
+}
+
+.modal-delivery-btn:focus {
+  outline: 5px solid #AF4FFF;
+  border-radius: 50%;
+}
+
+.modal-delivery-btn:hover {
+  opacity: 0.6;
+}
+
+.modal-delivery-btn:active {
+  opacity: 0.3;
+  outline: none;
+}
+
+.field-group {
+  margin: 0;
+  margin-bottom: 15px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  margin: 0;
+  margin-bottom: 18px;
+  padding: 0;
+
+  font-family: "Rubik", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  color: #000000;
+  letter-spacing: -0.5px;
+}
+
+.field {
+  padding-left: 20px;
+  height: 60px;
+
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+
+  border: none;
+  background-color: #F0F0F0;
+}
+
+.field-active {
+  outline:  3px solid #000000;
+  background-color: #FFFFFF;
+}
+
+.field-active:focus {
+  outline: none;
+}
+
+.field:focus {
+  outline: 5px solid #AF4FFF;
+}
+
+.field:invalid {
+  border: 3px solid #FF3D3D;
+  background-color: #FFFFFF;
+}
+
+.field:invalid ~ .form-comment {
+  color: #FF3D3D;
+}
+
+.form-comment {
+  margin: 0;
+  margin-top: 8px;
+
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.modal-delivery-form-quantity {
+  position: relative;
+}
+
+.quantity-input {
+  display: flex;
+}
+
+.quantity-input-active {
+  outline: 3px solid #000000;
+  background-color: #FFFFFF;
+}
+
+.quantity-input-btn {
+  padding: 0;
+  width: 50px;
+
+  display: flex;
+
+  border: none;
+  cursor: pointer;
+}
+
+.quantity-input-btn svg {
+  margin: auto;
+  opacity: 0.3;
+}
+
+.quantity-input-btn:hover svg {
+  opacity: 1;
+}
+
+.quantity-input-btn:focus {
+  outline: none;
+}
+
+.quantity-input-btn:focus svg {
+  padding: 5px;
+  border-radius: 50%;
+  outline: 2px solid #AF4FFF;
+}
+
+.quantity-input-btn-minus:focus svg {
+  display: block;
+  padding: 10px 4px;
+}
+
+.field-quantity {
+  position: relative;
+
+  padding: 0;
+  width: 60px;
+
+  text-align: center;
+  box-sizing: border-box;
+  appearance: textfield;
+}
+
+.field-quantity::-webkit-outer-spin-button,
+.field-quantity::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.field-quantity:focus {
+  outline: none;
+}
+
+.form-quantity-info {
+  position: absolute;
+  top: -2px;
+  left: 120px;
+
+  width: 26px;
+  height: 26px;
+
+  border: none;
+  border-radius: 50%;
+  background: #FFE17F url("../img/info.svg") no-repeat center;
+}
+
+.form-quantity-info-text {
+  position: absolute;
+  top: 35px;
+  right: -20px;
+
+  margin: 0;
+  padding: 19px 17px 20px 19px;
+  width: 200px;
+  display: none;
+
+  color: #FFFFFF;
+  font-size: 16px;
+  line-height: 20px;
+
+  background-color: #000000;
+  box-shadow: 0px 10px 0px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.form-quantity-info-text::before {
+  position: absolute;
+  top: -6px;
+  right: 40px;
+
+  content: "";
+  width: 14px;
+  height: 6px;
+
+  background: url("../img/triangle.svg") no-repeat;
+}
+
+.form-quantity-info-text p {
+  margin: 0;
+  padding: 0;
+}
+
+.form-quantity-info:hover ~ .form-quantity-info-text {
+  display: block;
+}
+
+.form-quantity-info:focus-within ~ .form-quantity-info-text {
+  display: block;
+}
+
+.modal-form-submit {
+  justify-self: start;
+
+  margin-top: 50px;
+  padding: 9px 28px 11px;
+
+  background: linear-gradient(to bottom, white 40%, #FFC700 40%, #FFC700 55%, white 55%);
+}
+
+.modal-form-submit:hover {
+  background: #FFC700;
 }
