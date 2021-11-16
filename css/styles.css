@@ -927,7 +927,6 @@ img {
   display: inline-block;
 
   letter-spacing: 3.6px;
-  font
 }
 
 .examples-of-goods-specifications {
@@ -1317,7 +1316,7 @@ img {
 }
 
 .conditions-special-delivery:hover {
- background-color: #ebebeb;
+  background-color: #ebebeb;
 }
 
 .conditions-special-delivery:hover::before {
@@ -2365,7 +2364,7 @@ img {
   opacity: 0.3;
 }
 
-.product-card:hover .product-btn-more-info{
+.product-card:hover .product-btn-more-info {
   display: block;
 }
 
@@ -2842,11 +2841,6 @@ img {
   appearance: none;
   -webkit-appearance: none;
   margin: 0;
-}
-
-.quantity-input-active {
-  outline: 3px solid #000000;
-  background-color: #ffffff;
 }
 
 .quantity-input-error {
